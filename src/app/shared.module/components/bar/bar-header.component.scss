@@ -1,0 +1,16 @@
+@import '~src/styles/_global-variables';
+
+.sub-bar-header-item{
+    box-sizing: border-box;
+    color: $primaryColor;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px;
+    background: $backgroundColor;
+    border-radius: 10%;
+    &:hover{
+        color:white;
+        background: $primaryColor;
+        box-shadow:  10px 10x 10px -10px $primaryColor;
+    }
+}

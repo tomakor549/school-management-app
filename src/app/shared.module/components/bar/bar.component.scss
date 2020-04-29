@@ -1,0 +1,40 @@
+@import '~src/styles/_global-variables';
+
+.bar {
+    margin: 2 0;
+  
+    &__header-bar {
+      position: relative;
+    }
+  
+    &__nav {
+      display: flex;
+      flex-direction: row;
+        justify-content: space-evenly;
+    }
+  
+    &__item {
+      display: flex;
+      box-sizing: border-box;
+      color: $primaryColor;
+      text-decoration: none;
+      cursor: pointer;
+      &--active {
+        font-weight: bold;
+      }
+    }
+  
+    &__content {
+      padding: 2px;
+      background-color: $backgroundColor;
+    }
+  
+    &__panel {
+      display: none;
+  
+      &--active {
+        display: block;
+      }
+    }
+  }
+  

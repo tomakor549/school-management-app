@@ -1,0 +1,42 @@
+<form [formGroup]="teacherForm">
+    <div class="form-group">
+        <label for="firstName">Imię</label>
+        <input type="text" formControlName="firstName" class="form-control"
+            [ngClass]="{ 'is-invalid':f.firstName.errors }" />
+        <div *ngIf="f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Imię jest wymagane</div>
+            <div *ngIf="f.firstName.errors.minLength">Imię jest za krótkie</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" formControlName="lastName" class="form-control"
+            [ngClass]="{ 'is-invalid': f.lastName.errors }" />
+        <div *ngIf="f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Nazwisko jest wymagane</div>
+            <div *ngIf="f.lastName.errors.minLength">Nazwisko jest za krótkie</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <kendo-datepicker (valueChange)="birthDatePickerChangedHandler($event)">
+        </kendo-datepicker>
+    </div>
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" formControlName="login" class="form-control" [ngClass]="{ 'is-invalid': f.login.errors }" />
+        <div *ngIf="f.login.errors" class="invalid-feedback">
+            <div *ngIf="f.login.errors.required">Login jest wymagany</div>
+        </div>
+
+        <button (click)="generateLogin()" [disabled]="!f.lastName.errors && f.firstName.errors" class="btn btn-primary">
+            Generuj login
+        </button>
+    </div>
+
+    <button (click)="addTeacher()" [disabled]="!teacherForm.valid" class="btn btn-primary">
+        Dodaj nauczyciela
+    </button>
+
+</form>
