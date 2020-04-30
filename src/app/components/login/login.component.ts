@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.currentUser.subscribe(user=>{
       if(user && authenticationService.isUserLoggedIn)
       {
+        console.log(user);
         this.router.navigate(['/'+user.userType.toLowerCase()]);
       }
     })

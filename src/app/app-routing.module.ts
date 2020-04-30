@@ -14,6 +14,24 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canActivate: [AuthGuard], 
     data: { roles: [UserType.ADMIN]}
+  },
+  {
+    path: 'teacher',
+    loadChildren: () => import('./teacher/teacher.module').then(m => m.TeacherModule),
+    canActivate: [AuthGuard], 
+    data: { roles: [UserType.TEACHER]}
+  },
+  {
+    path: 'parent',
+    loadChildren: () => import('./parent/parent.module').then(m => m.ParentModule),
+    canActivate: [AuthGuard], 
+    data: { roles: [UserType.PARENT]}
+  },
+  {
+    path: 'student',
+    loadChildren: () => import('./student/student.module').then(m => m.StudentModule),
+    canActivate: [AuthGuard], 
+    data: { roles: [UserType.STUDENT]}
   }
 ];
 
