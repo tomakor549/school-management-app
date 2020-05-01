@@ -1,0 +1,89 @@
+<form [formGroup]="parentStudentForm">
+    <div class="form-group">
+        <label for="firstName">Imię</label>
+        <input type="text" formControlName="parentFirstName" class="form-control"
+            [ngClass]="{ 'is-invalid':f.parentFirstName.errors }" />
+        <div *ngIf="f.parentFirstName.errors" class="invalid-feedback">
+            <div *ngIf="f.parentFirstName.errors.required">Imię jest wymagane</div>
+            <div *ngIf="f.parentFirstName.errors.minLength">Imię jest za krótkie</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" formControlName="parentLastName" class="form-control"
+            [ngClass]="{ 'is-invalid': f.parentLastName.errors }" />
+        <div *ngIf="f.parentLastName.errors" class="invalid-feedback">
+            <div *ngIf="f.parentLastName.errors.required">Nazwisko jest wymagane</div>
+            <div *ngIf="f.parentLastName.errors.minLength">Nazwisko jest za krótkie</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <kendo-datepicker (valueChange)="parentBirthDatePickerChangedHandler($event)">
+        </kendo-datepicker>
+    </div>
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" formControlName="parentLogin" class="form-control"
+            [ngClass]="{ 'is-invalid': f.parentLogin.errors }" />
+        <div *ngIf="f.parentLogin.errors" class="invalid-feedback">
+            <div *ngIf="f.parentLogin.errors.required">Login jest wymagany</div>
+        </div>
+
+        <button (click)="generateParentsLogin()" [disabled]="!f.parentLastName.errors && f.parentFirstName.errors"
+            class="btn btn-primary">
+            Generuj login rodzica
+        </button>
+    </div>
+
+    <kendo-dropdownlist name="classId"
+                        [data]="classList"
+                        [textField]="'name'"
+                        [valueField]="'id'"
+                        (valueChange)="dropdownValueChanged($event)">
+    </kendo-dropdownlist>
+
+    <div class="form-group">
+        <label for="firstName">Imię</label>
+        <input type="text" formControlName="studentFirstName" class="form-control"
+            [ngClass]="{ 'is-invalid':f.studentFirstName.errors }" />
+        <div *ngIf="f.studentFirstName.errors" class="invalid-feedback">
+            <div *ngIf="f.studentFirstName.errors.required">Imię jest wymagane</div>
+            <div *ngIf="f.studentFirstName.errors.minLength">Imię jest za krótkie</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <input type="text" formControlName="studentLastName" class="form-control"
+            [ngClass]="{ 'is-invalid': f.studentLastName.errors }" />
+        <div *ngIf="f.studentLastName.errors" class="invalid-feedback">
+            <div *ngIf="f.studentLastName.errors.required">Nazwisko jest wymagane</div>
+            <div *ngIf="f.studentLastName.errors.minLength">Nazwisko jest za krótkie</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Nazwisko</label>
+        <kendo-datepicker (valueChange)="studentBirthDatePickerChangedHandler($event)">
+        </kendo-datepicker>
+    </div>
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" formControlName="studentLogin" class="form-control"
+            [ngClass]="{ 'is-invalid': f.studentLogin.errors }" />
+        <div *ngIf="f.studentLogin.errors" class="invalid-feedback">
+            <div *ngIf="f.studentLogin.errors.required">Login jest wymagany</div>
+        </div>
+
+        <button (click)="generateStudentLogin()" [disabled]="!f.studentLastName.errors && f.studentFirstName.errors"
+            class="btn btn-primary">
+            Generuj login Ucznia
+        </button>
+    </div>
+
+    <button (click)="addParentAndStudent()" [disabled]="!parentStudentForm.valid" class="btn btn-primary">
+        Dodaj Rodzica i Ucznia
+    </button>
+
+</form>

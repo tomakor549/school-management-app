@@ -21,7 +21,6 @@ export class TeacherInsertComponent implements OnInit {
   });
 
   get f() {
-    console.log(this.teacherForm.controls)
     return this.teacherForm.controls;
   }
 
