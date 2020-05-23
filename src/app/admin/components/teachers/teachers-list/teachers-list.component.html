@@ -1,18 +1,10 @@
-<kendo-grid *ngIf="gridData"
-            [kendoGridBinding]="gridData"
-            kendoGridSelectBy="id"
-            [selectedKeys]="mySelection"
-            [pageSize]="20"
-            [pageable]="true"
-            [sortable]="true"
-            [resizable]="true"
-            [height]="480"
-        >
-        <kendo-grid-column field="firstName" title="Imię" width="100">
-        </kendo-grid-column>
-        <kendo-grid-column field="lastName" title="Nazwisko" width="100">
-        </kendo-grid-column>
-        <kendo-grid-column field="birthDate" title="Data urodzenia" width="100">
-        </kendo-grid-column>
-           
-        </kendo-grid>
+<kendo-grid *ngIf="gridData" [kendoGridBinding]="gridData" kendoGridSelectBy="id" [selectedKeys]="mySelection"
+    [pageSize]="20" [pageable]="true" [sortable]="true" [resizable]="true" [height]="480">
+    <kendo-grid-column field="firstName" title="Imię" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="lastName" title="Nazwisko" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="birthDate" title="Data urodzenia" width="100">
+    </kendo-grid-column>
+
+</kendo-grid>

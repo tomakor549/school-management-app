@@ -1,0 +1,12 @@
+<app-bar>
+    <app-bar-header>Lista przedmiotów</app-bar-header>
+    <app-bar-item>
+        <app-courses-list [coursesList]="coursesList"
+        (dataStateChanged)="loadCourses()"></app-courses-list>
+    </app-bar-item>
+
+    <app-bar-header>Dodaj przedmioty</app-bar-header>
+    <app-bar-item>
+        <app-courses-insert (courseAdded)="loadCourses()"></app-courses-insert>
+    </app-bar-item>
+</app-bar>

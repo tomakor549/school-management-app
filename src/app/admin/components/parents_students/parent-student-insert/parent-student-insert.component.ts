@@ -43,7 +43,6 @@ export class ParentStudentInsertComponent implements OnInit {
   });
 
   get f() {
-    console.log(this.parentStudentForm)
     return this.parentStudentForm.controls;
   }
 

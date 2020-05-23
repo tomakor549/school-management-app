@@ -1,0 +1,15 @@
+<kendo-grid *ngIf="coursesList" [kendoGridBinding]="coursesList" [pageSize]="20" [pageable]="true" [sortable]="true"
+    [resizable]="true" [height]="480" (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+    (save)="saveHandler($event)" (remove)="removeHandler($event)"
+    (add)="addHandler($event)">
+    <kendo-grid-column field="name" title="Nazwa" width="100">
+    </kendo-grid-column>
+    <kendo-grid-command-column title="command" width="220">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+            <button kendoGridEditCommand [primary]="true">Edit</button>
+            <button kendoGridRemoveCommand>Remove</button>
+            <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+            <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+        </ng-template>
+    </kendo-grid-command-column>
+</kendo-grid>

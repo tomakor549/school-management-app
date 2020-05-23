@@ -14,11 +14,14 @@ import { ParentStudentInsertComponent } from './components/parents_students/pare
 import { ParentsStudentsComponent } from './components/parents_students/parents-students/parents-students.component';
 import { DropDownListComponent, DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { InputsModule } from '@progress/kendo-angular-inputs';
+import { CoursesListComponent } from './components/courses/courses-list/courses-list.component';
+import { CoursesInsertComponent } from './components/courses/courses-insert/courses-insert.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 
 
 @NgModule({
-  declarations: [AdminSectionComponent, TeachersComponent, TeacherInsertComponent, TeachersListComponent, ParentStudentInsertComponent, ParentsStudentsComponent],
+  declarations: [AdminSectionComponent, TeachersComponent, TeacherInsertComponent, TeachersListComponent, ParentStudentInsertComponent, ParentsStudentsComponent,CoursesComponent, CoursesListComponent, CoursesInsertComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

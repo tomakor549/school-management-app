@@ -1,0 +1,14 @@
+<form [formGroup]="courseForm">
+    <div class="form-group">
+        <label for="courseName">Nazwa przedmiotu</label>
+        <input type="text" formControlName="courseName" class="form-control"
+            [ngClass]="{ 'is-invalid':courseForm.controls.courseName.errors }" />
+        <div *ngIf="courseForm.controls. courseName.errors" class="invalid-feedback">
+            <div *ngIf="courseForm.controls.courseName.errors.required">Nazwa jest wymagana</div>
+            <div *ngIf="courseForm.controls.courseName.errors.minLength">Nazwa jest za krótka</div>
+        </div>
+    </div>
+    <button (click)="addCourse()" [disabled]="!courseForm.valid" class="btn btn-primary">
+        Dodaj przedmiot
+    </button>
+</form>

@@ -4,6 +4,7 @@ import { AdminSectionComponent } from './components/admin-section/admin-section.
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { ParentStudentCreationModel } from '../_models/parents_students/parent-student.model';
 import { ParentsStudentsComponent } from './components/parents_students/parents-students/parents-students.component';
+import { CoursesComponent } from './components/courses/courses.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
         //canActivateChild: [AuthGuard],
         children: [
           { path: 'teachers', component: TeachersComponent },
+          { path: 'courses', component: CoursesComponent },
           { path: 'parentsStudentsInsert', component: ParentsStudentsComponent },
         ]
       }
