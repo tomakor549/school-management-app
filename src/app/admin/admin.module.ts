@@ -17,11 +17,13 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { CoursesListComponent } from './components/courses/courses-list/courses-list.component';
 import { CoursesInsertComponent } from './components/courses/courses-insert/courses-insert.component';
 import { CoursesComponent } from './components/courses/courses.component';
+import { TeacherCourseAppointmentComponent } from './components/courses/teacher-course-appointment/teacher-course-appointment.component';
+import { TeacherCourseLinkingsListComponent } from './components/courses/teacher-course-linkings-list/teacher-course-linkings-list.component';
 
 
 
 @NgModule({
-  declarations: [AdminSectionComponent, TeachersComponent, TeacherInsertComponent, TeachersListComponent, ParentStudentInsertComponent, ParentsStudentsComponent,CoursesComponent, CoursesListComponent, CoursesInsertComponent],
+  declarations: [AdminSectionComponent, TeachersComponent, TeacherInsertComponent, TeachersListComponent, ParentStudentInsertComponent, ParentsStudentsComponent,CoursesComponent, CoursesListComponent, CoursesInsertComponent, TeacherCourseAppointmentComponent, TeacherCourseLinkingsListComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

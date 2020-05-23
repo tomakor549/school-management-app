@@ -1,0 +1,9 @@
+<kendo-grid *ngIf="linkingsList" [kendoGridBinding]="linkingsList" kendoGridSelectBy="id" [pageSize]="20"
+    [pageable]="true" [sortable]="true" [resizable]="true" [height]="480">
+    <kendo-grid-column field="teacher.firstName" title="Imię" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="teacher.lastName" title="Nazwisko" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="course.name" title="Przedmiot" width="100">
+    </kendo-grid-column>
+</kendo-grid>

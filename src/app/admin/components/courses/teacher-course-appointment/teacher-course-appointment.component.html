@@ -1,0 +1,19 @@
+<h3 *ngIf="selectedTeacher">Wybrany nauczyciel: {{selectedTeacher.firstName}} {{selectedTeacher.lastName}}</h3>
+
+<kendo-dropdownlist name="courseId" [data]="coursesList" [textField]="'name'" [valueField]="'id'"
+    (valueChange)="dropdownValueChanged($event)">
+</kendo-dropdownlist>
+
+<button (click)="linkTeacherWithCourse()" [disabled]="!selectedTeacher || !selectedCourseId" class="btn btn-primary">
+    Dodaj przedmiot
+</button>
+
+<kendo-grid *ngIf="teachersList" [kendoGridBinding]="teachersList" kendoGridSelectBy="id" [pageSize]="20"
+    [pageable]="true" [sortable]="true" [resizable]="true" (selectionChange)="teacherSelected($event)" [height]="480">
+    <kendo-grid-column field="firstName" title="Imię" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="lastName" title="Nazwisko" width="100">
+    </kendo-grid-column>
+    <kendo-grid-column field="birthDate" title="Data urodzenia" width="100">
+    </kendo-grid-column>
+</kendo-grid>

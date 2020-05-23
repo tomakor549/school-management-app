@@ -9,4 +9,14 @@
     <app-bar-item>
         <app-courses-insert (courseAdded)="loadCourses()"></app-courses-insert>
     </app-bar-item>
+
+    <app-bar-header>Przypisz nauczyciela do przedmiotu</app-bar-header>
+    <app-bar-item>
+        <app-teacher-course-appointment [coursesList]="coursesList" [teachersList]="teachersList" ></app-teacher-course-appointment>
+    </app-bar-item>
+
+    <app-bar-header>Lista przypisań nauczycieli do przedmiotów</app-bar-header>
+    <app-bar-item>
+        <app-teacher-course-linkings-list [linkingsList]="teacherCourseLinkingsList" ></app-teacher-course-linkings-list>
+    </app-bar-item>
 </app-bar>
